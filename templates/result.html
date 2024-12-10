@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencil Sketch Result</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Pencil Sketch</h1>
+        <div class="images-container">
+            <img src="{{ original_img }}" alt="Original Image">
+            <img src="data:image/png;base64,{{ img_data }}" alt="Pencil Sketch">
+        </div>
+        <button onclick="location.href='/'">Generate Another</button>
+    </div>
+</body>
+</html>

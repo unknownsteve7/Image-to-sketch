@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencil Sketch Generator</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pencil Sketch Generator</h1>
+        <div id="drop-zone">
+            <p>Drag and drop an image here, or <span id="file-input-trigger">click to upload</span>.</p>
+            <input type="file" id="file-input" accept="image/*" hidden>
+        </div>
+        <div id="preview-container" class="hidden">
+            <div class="images-container">
+                <div>
+                    <h2>Original Image</h2>
+                    <img id="preview-image" src="#" alt="Uploaded Image">
+                </div>
+                <div>
+                    <h2>Sketch Image</h2>
+                    <img id="result-image" src="#" alt="Sketch Image">
+                </div>
+            </div>
+            <button id="generate-btn">Generate Sketch</button>
+        </div>
+        <div id="loading" class="hidden">
+            <p>Processing...</p>
+        </div>
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

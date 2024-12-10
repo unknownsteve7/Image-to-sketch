@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PyScript Example</title>
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+    <h1>Python in HTML</h1>
+    <py-script>
+        import cv2
+        from tkinter import filedialog, Tk
+        from PIL import Image
+        Tk().withdraw()
+        file_path = filedialog.askopenfilename(title="Select an Image")
+        if file_path:
+            image = Image.open(file_path)
+            image.show()
+        else:
+            print("No file selected.")
+        image2=cv2.imread(file_path)
+        gray_image=cv2.cvtColor(image2,cv2.COLOR_BGR2GRAY)
+        inverted=255-gray_image
+        blur=cv2.GaussianBlur(inverted,(21,21),0)
+        invertedblur=255-blur
+        sketch=cv2.divide(gray_image,invertedblur,scale=256.0)
+        cv2.imwrite("sketch.png",sketch)
+        cv2.imshow("image",sketch)
+    </py-script>
+</body>
+</html>
